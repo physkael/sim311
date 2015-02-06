@@ -1,0 +1,12 @@
+#! /bin/bash
+
+for e in {5..75}
+do
+    cat <<EOF > todo.list
+/control/execute gps.mac
+/gps/particle gamma
+/gps/energy $e keV
+/run/beamOn 100000
+EOF
+    echo $e `../PropCtrSim-build/PropCtrSim todo.list | grep "^DE: 0[^ ]" | wc -l`
+done

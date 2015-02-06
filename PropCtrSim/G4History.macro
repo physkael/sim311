@@ -1,0 +1,56 @@
+/run/verbose 2
+/control/execute vis.mac
+/vis/open OGLIQt 800x600
+/vis/sceneHandler/create OGLIQt
+/vis/viewer/create ! ! 800x600
+/vis/viewer/refresh
+/vis/viewer/set/autoRefresh false
+/vis/verbose errors
+/vis/viewer/set/background 0.9 0.85 0.90 0.85
+/vis/viewer/set/viewpointThetaPhi 90 90
+/vis/viewer/set/upThetaPhi 90 0
+/vis/viewer/set/hiddenEdge True
+/vis/viewer/set/style surface
+/vis/drawVolume
+/vis/scene/create
+/vis/scene/add/volume world
+/vis/sceneHandler/attach
+/vis/viewer/zoom 2.
+/vis/viewer/set/auxiliaryEdge true
+/vis/viewer/set/lineSegmentsPerCircle 50
+/vis/scene/add/axes 0 0 0 10 cm
+/vis/scene/notifyHandlers
+/vis/scene/add/trajectories smooth
+/tracking/storeTrajectory 2
+/vis/scene/notifyHandlers
+/vis/modeling/trajectories/create/drawByParticleID
+/vis/modeling/trajectories/drawByParticleID-0/default/setDrawStepPts true
+/vis/scene/notifyHandlers scene-0
+/vis/modeling/trajectories/drawByParticleID-0/default/setStepPtsSize 1
+/vis/scene/notifyHandlers scene-0
+/vis/modeling/trajectories/drawByParticleID-0/set e- red
+/vis/scene/notifyHandlers scene-0
+/vis/modeling/trajectories/drawByParticleID-0/set e+ blue
+/vis/scene/notifyHandlers scene-0
+/vis/modeling/trajectories/drawByParticleID-0/set gamma green
+/vis/scene/notifyHandlers scene-0
+/vis/scene/endOfEventAction accumulate
+/vis/viewer/set/autoRefresh true
+/vis/viewer/refresh
+/vis/verbose warnings
+/control/execute gps.mac
+/gps/particle gamma
+/gps/energy 50 keV
+/gps/position 0.0 0.0 -10.0 cm
+/gps/ang/type beam1d
+/gps/ang/rot2 0.0 -1.0 0.0
+/gps/ang/sigma_r 10.0 deg
+/run/setCut 0.1 mm
+/run/beamOn 40
+/vis/scene/notifyHandlers scene-0
+/run/beamOn 40
+/gps/energy 50 keV
+/run/beamOn 40
+/run/beamOn 40
+/gps/energy 100 keV
+/run/beamOn 40

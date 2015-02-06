@@ -1,0 +1,4 @@
+/control/execute gps.mac
+/gps/particle gamma
+/gps/energy 75 keV
+/run/beamOn 100000

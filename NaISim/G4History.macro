@@ -1,0 +1,39 @@
+/run/verbose 2
+/control/execute vis.mac
+/vis/open OGLIQt 800x600
+/vis/sceneHandler/create OGLIQt
+/vis/viewer/create ! ! 800x600
+/vis/viewer/refresh
+/vis/viewer/set/autoRefresh false
+/vis/verbose errors
+/vis/viewer/set/background 0.95 0.95 0.95 0.85
+/vis/viewer/set/viewpointThetaPhi 163 158
+/vis/viewer/set/hiddenEdge True
+/vis/viewer/set/style surface
+/vis/drawVolume
+/vis/scene/create
+/vis/scene/add/volume world
+/vis/sceneHandler/attach
+/vis/viewer/set/lineSegmentsPerCircle 25
+/vis/scene/add/trajectories smooth
+/tracking/storeTrajectory 2
+/vis/scene/notifyHandlers
+/vis/modeling/trajectories/create/drawByCharge
+/vis/modeling/trajectories/drawByCharge-0/default/setDrawStepPts true
+/vis/scene/notifyHandlers scene-0
+/vis/modeling/trajectories/drawByCharge-0/default/setStepPtsSize 1
+/vis/scene/notifyHandlers scene-0
+/vis/scene/endOfEventAction accumulate
+/vis/viewer/set/autoRefresh true
+/vis/viewer/refresh
+/vis/verbose warnings
+/control/execute gps.mac
+/gps/particle gamma
+/gps/energy 1100 keV
+/gps/position 0.0 0.0 -20.0 cm
+/gps/type Point
+/gps/ang/type iso
+/gps/ang/rot2 0.0 -1.0 0.0
+/run/beamOn 10
+/vis/scene/notifyHandlers scene-0
+/run/beamOn 1000

@@ -1,0 +1,11 @@
+*******************************
+*                             *
+*  NaI Crystal Simulation     *
+*  (C) 2012 Kael HANSON       *
+*  ULB Particle Astrophysics  *
+*                             *
+*******************************
+
+This is a simulation of a NaI scintillating crystal for the ULB PHYS-F-311 
+Laboratory on Nuclear PhysicsYou can probably still see that it is a hack of 
+the standard ExN01 from the GEANT4 examples directory.  
